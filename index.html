@@ -74,13 +74,13 @@
 <body>
     <div class="hearts"></div>
     <div class="container">
-        <h1>Will you be my Valentine?</h1>
-        <p>Choose wisely!</p>
+        <h1>Will you be my Valentine</h1>
+        <p>CHOOSE WISELY GRRR</p>
         <div class="buttons">
             <button id="yesBtn" onclick="showCatGif()">Yes</button>
             <button id="noBtn" onclick="moveNoButton()">No</button>
         </div>
-        <img id="catGif" class="hidden cat-gif" src="https://media.giphy.com/media/l0HlQ7LRal0zK6SD6/giphy.gif" alt="Cat Kissing Screen">
+        <img id="catGif" class="hidden cat-gif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHN3N3dvMmhvMGJmM3c4YnpsZ2kwY2l6dHFlcm9scXZtODFzNHd2OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oz8xsaLjLVqVXr3tS/giphy.gif" alt="Cat Kissing Screen">
     </div>
     
     <script>
@@ -101,8 +101,11 @@
                 noBtn.classList.add('hidden');
                 return;
             }
-            let x = Math.random() * (window.innerWidth - 100) + 50;
-            let y = Math.random() * (window.innerHeight - 50) + 50;
+            let maxX = window.innerWidth - 100; 
+            let maxY = window.innerHeight - 50; 
+            let x = Math.random() * maxX + 50; 
+            let y = Math.random() * maxY + 50; 
+            
             noBtn.style.left = `${x}px`;
             noBtn.style.top = `${y}px`;
             
