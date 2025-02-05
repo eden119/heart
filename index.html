@@ -32,6 +32,7 @@
         .buttons {
             display: flex;
             gap: 20px;
+            position: relative;
         }
         button {
             padding: 10px 20px;
@@ -41,12 +42,14 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
+            position: relative;
         }
         button:hover {
             background: #b0246e;
         }
         #noBtn {
             position: absolute;
+            left: 50px;
         }
         .hidden {
             display: none;
@@ -82,7 +85,7 @@
             <button id="yesBtn" onclick="showCatGif()">Yes</button>
             <button id="noBtn" onclick="moveNoButton()">No</button>
         </div>
-        <img id="catGif" class="hidden cat-gif" src="https://media.giphy.com/media/l0HlQ7LRal0zK6SD6/giphy.gif" alt="Cat Kissing Screen">
+        <img id="catGif" class="hidden cat-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDl1cWJ2OTdmbGpsNWJubm9lZng0bjc3bnV3NzExMjRmNjBkYXNibyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oz8xsaLjLVqVXr3tS/giphy.gif" alt="Meow kiss">
     </div>
     
     <script>
@@ -94,8 +97,8 @@
         
         function moveNoButton() {
             let noBtn = document.getElementById('noBtn');
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 50);
+            let x = Math.random() * (window.innerWidth - 200) + 50;
+            let y = Math.random() * (window.innerHeight - 100) + 50;
             noBtn.style.left = `${x}px`;
             noBtn.style.top = `${y}px`;
         }
