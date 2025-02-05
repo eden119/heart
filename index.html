@@ -51,11 +51,17 @@
             margin-top: 20px;
             display: none;
         }
+
+        #cat-gif {
+            display: none;
+            width: 300px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Will you be my Valentine? 💖</h1>
+    <h1 id="question">Will you be my Valentine? 💖</h1>
     
     <div class="buttons">
         <button id="yes" onclick="sayYes()">Yes</button>
@@ -63,10 +69,14 @@
     </div>
 
     <p id="message">I love you, honey! 😘</p>
+    <img id="cat-gif" src="https://media.giphy.com/media/3o6ZsY1nYX0zXqPWGg/giphy.gif" alt="Cat Kiss GIF">
 
     <script>
         function sayYes() {
-            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.display = "block"; // Show the love message
+            document.getElementById("question").style.display = "none"; // Hide the question
+            document.getElementById("no").style.display = "none"; // Hide the no button
+            document.getElementById("cat-gif").style.display = "block"; // Show the cat GIF
         }
 
         function moveNo() {
