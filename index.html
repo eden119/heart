@@ -31,7 +31,7 @@
         }
         .buttons {
             display: flex;
-            gap: 20px;
+            gap: 50px;
             position: relative;
         }
         button {
@@ -42,14 +42,9 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            position: relative;
         }
         button:hover {
             background: #b0246e;
-        }
-        #noBtn {
-            position: absolute;
-            left: 50px;
         }
         .hidden {
             display: none;
@@ -85,22 +80,35 @@
             <button id="yesBtn" onclick="showCatGif()">Yes</button>
             <button id="noBtn" onclick="moveNoButton()">No</button>
         </div>
-        <img id="catGif" class="hidden cat-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDl1cWJ2OTdmbGpsNWJubm9lZng0bjc3bnV3NzExMjRmNjBkYXNibyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3oz8xsaLjLVqVXr3tS/giphy.gif" alt="Meow kiss">
+        <img id="catGif" class="hidden cat-gif" src="https://media.giphy.com/media/l0HlQ7LRal0zK6SD6/giphy.gif" alt="Cat Kissing Screen">
     </div>
     
     <script>
+        let yesClicked = false;
+        let yesSize = 1;
+        
         function showCatGif() {
             document.getElementById('catGif').classList.remove('hidden');
-            document.getElementById('noBtn').classList.add('hidden');
             document.getElementById('yesBtn').classList.add('hidden');
+            yesClicked = true;
+            document.getElementById('noBtn').classList.add('hidden');
         }
         
         function moveNoButton() {
             let noBtn = document.getElementById('noBtn');
+            let yesBtn = document.getElementById('yesBtn');
+            if (yesClicked) {
+                noBtn.classList.add('hidden');
+                return;
+            }
             let x = Math.random() * (window.innerWidth - 200) + 50;
             let y = Math.random() * (window.innerHeight - 100) + 50;
+            noBtn.style.position = 'absolute';
             noBtn.style.left = `${x}px`;
             noBtn.style.top = `${y}px`;
+            
+            yesSize += 0.2;
+            yesBtn.style.transform = `scale(${yesSize})`;
         }
         
         function createHeart() {
