@@ -118,7 +118,7 @@
             heart.classList.add('heart');
             document.querySelector('.hearts').appendChild(heart);
             
-            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.left = Math.random()  + 'vw';
             heart.style.animation = `float ${Math.random() * 3 + 2}s linear infinite`;
             
             setTimeout(() => heart.remove(), 3000);
@@ -127,12 +127,12 @@
     </script>
     <style>
         @keyframes float {
-            0% {
+            100% {
                 transform: translateY(100vh);
                 opacity: 0;
             }
-            100% {
-                transform: translateY(10vh);
+            00% {
+                transform: translateY(-10vh);
                 opacity: 1;
             }
         }
